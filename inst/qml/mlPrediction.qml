@@ -110,7 +110,7 @@ Form
 
 	GroupBox
 	{
-		title:								qsTr("Export")
+		title:								qsTr("Export Results")
 
 		CheckBox
 		{
