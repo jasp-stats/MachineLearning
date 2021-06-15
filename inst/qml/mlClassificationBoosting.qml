@@ -246,7 +246,7 @@ Form {
 					id:							file
 					name:						"file"
 					label:  					qsTr("Save as: ")
-					filter:						"*.rds"
+					filter:						"*.jaspML"
 					save:						true
 					fieldWidth:					180 * preferencesModel.uiScale 
 					visible:					modelSave.checked

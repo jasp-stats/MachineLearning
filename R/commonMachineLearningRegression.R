@@ -364,8 +364,9 @@
   }
 
   if(options[["saveModel"]]){
-	  class(regressionResult[["model"]]) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
-	  saveRDS(regressionResult[["model"]], options[["file"]])
+      class(regressionResult[["model"]]) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
+      model <- regressionResult[["model"]]
+      save(model, file = options[["file"]])
   }
 }
 
