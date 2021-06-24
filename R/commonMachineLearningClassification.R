@@ -233,7 +233,7 @@
   if(options[["saveModel"]]){
       class(classificationResult[["model"]]) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
       model <- classificationResult[["model"]]
-      save(model, file = options[["file"]])
+      saveRDS(model, file = options[["file"]])
   }
 }
 

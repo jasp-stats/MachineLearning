@@ -116,15 +116,9 @@ is.jaspMachineLearning <- function(x) {
   model[["glmnet.fit"]][["nobs"]]
 }
 
-.load_jaspMLobject <- function(file) {
-  tmp <- new.env()
-  load(file = file, envir = tmp)
-  tmp[[ls(tmp)[1]]]
-}
-
 .mlPredictionReadModel <- function(options) {
   if (options[["file"]] != "") {
-    model <- try({ .load_jaspMLobject(file = options[["file"]]) })
+    model <- try({ readRDS(options[["file"]]) })
     if (!is.jaspMachineLearning(model))
 	  jaspBase:::.quitAnalysis(gettext("The imported model is not created in JASP."))
 	if (!(any(c("lda", "gbm", "randomForest", "cv.glmnet") %in% class(model)))) # Predictions for knn are not supported
